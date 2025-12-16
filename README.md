@@ -1,4 +1,4 @@
-# DevSetup Manager 🚀
+# DevSetup Manager 
 
 ## 📝 Sobre o Projeto
 Olá! Este é o **DevSetup Manager**, um sistema que eu desenvolvi para o gerenciamento de inventário de TI. A ideia principal é ter um lugar simples, bonito e funcional para cadastrar e controlar equipamentos como notebooks, monitores e periféricos.
