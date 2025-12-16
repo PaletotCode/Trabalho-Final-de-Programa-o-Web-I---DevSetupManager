@@ -1,7 +1,5 @@
 COMO RODAR O PROJETO
 
-Siga os passos abaixo, dependendo do seu sistema operacional.
-
 === WINDOWS ===
 
 1. Abra o Terminal (PowerShell ou CMD) na pasta do projeto.
