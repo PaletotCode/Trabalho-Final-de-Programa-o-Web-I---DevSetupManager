@@ -1,0 +1,66 @@
+<!-- Página que lista todos os equipamentos cadastrados no banco de dados com opção de filtro, busca e visualização de status. -->
+{% extends "base.html" %}
+
+{% block title %}Inventário - DevSetup Manager{% endblock %}
+
+{% block content %}
+<section>
+    <div style="margin-bottom: 2rem;">
+        <h1>Inventário</h1>
+        <p class="subtitle">Todos os itens cadastrados.</p>
+    </div>
+
+    <div class="table-controls">
+        <form action="{{ url_for('listar') }}" method="GET" class="search-box">
+            <input type="text" name="busca" placeholder="Buscar..." value="{{ request.args.get('busca', '') }}">
+            <button type="submit" class="btn btn-secondary">
+                <i data-lucide="search" style="width: 16px; height: 16px;"></i>
+            </button>
+        </form>
+        {% if url_for('exportar') is defined %}
+        <a href="{{ url_for('exportar') }}" class="btn btn-secondary">
+            <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+            CSV
+        </a>
+        {% endif %}
+    </div>
+
+    {% if equipamentos %}
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Categoria</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in equipamentos %}
+                <tr>
+                    <td data-label="Item" style="font-weight: 500;">
+                        {{ item.nome }}
+                    </td>
+                    <td data-label="Categoria">
+                        {{ item.categoria }}
+                    </td>
+                    <td data-label="Status" data-status="{{ item.status }}">
+                        <span class="badge">{{ item.status }}</span>
+                    </td>
+                    <td data-label="Valor">
+                        R$ {{ "%.2f"|format(item.valor) }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="card" style="padding: 2rem;">
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">Nenhum item encontrado.</p>
+        <a href="{{ url_for('cadastro') }}" class="btn btn-primary">Adicionar Primeiro Item</a>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

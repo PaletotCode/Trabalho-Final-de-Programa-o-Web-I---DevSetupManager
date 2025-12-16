@@ -1,0 +1,54 @@
+<!-- Página responsável pelo cadastro de novos equipamentos no sistema, contendo o formulário de entrada. -->
+{% extends "base.html" %}
+
+{% block title %}Novo Equipamento - DevSetup Manager{% endblock %}
+
+{% block content %}
+<section>
+    <div style="margin-bottom: 2rem;">
+        <h1>Novo Equipamento</h1>
+        <p class="subtitle">Preencha os dados abaixo.</p>
+    </div>
+
+    <div class="form-card">
+        <form action="{{ url_for('cadastro') }}" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome do Item</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Dell XPS 15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Monitor">Monitor</option>
+                    <option value="Periférico">Periférico</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="Disponível">Disponível</option>
+                    <option value="Em uso">Em uso</option>
+                    <option value="Manutenção">Manutenção</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor (R$)</label>
+                <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="0.00" required>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <button type="submit" class="btn btn-primary">
+                    <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                    Salvar Item
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

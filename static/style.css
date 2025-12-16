@@ -1,0 +1,7 @@
+/* Este arquivo só serve para importar os outros módulos CSS. Ele organiza a ordem em que os estilos são carregados. */
+
+@import 'css/1-settings.css';
+@import 'css/2-base.css';
+@import 'css/3-layout.css';
+@import 'css/4-components.css';
+@import 'css/5-modules.css';

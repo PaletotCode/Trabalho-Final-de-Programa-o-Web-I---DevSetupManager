@@ -1,0 +1,44 @@
+<!-- Este é o template principal (Mestre). Todas as outras páginas herdam a estrutura daqui (NavBar, Footer, CSS). -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DevSetup Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <div class="brand-title">DevSetupManager</div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <nav class="nav-dock">
+        <a href="{{ url_for('index') }}" class="nav-item {{ 'active' if request.endpoint == 'index' }}">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="{{ url_for('cadastro') }}" class="nav-item {{ 'active' if request.endpoint == 'cadastro' }}">
+            <i data-lucide="plus-circle"></i>
+            <span>Novo Item</span>
+        </a>
+        <a href="{{ url_for('listar') }}" class="nav-item {{ 'active' if request.endpoint == 'listar' }}">
+            <i data-lucide="list"></i>
+            <span>Inventário</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

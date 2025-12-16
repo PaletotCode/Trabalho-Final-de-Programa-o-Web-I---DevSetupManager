@@ -1,0 +1,104 @@
+/* Estilos para componentes mais complexos, como a tabela de listagem e o grid de estatísticas. */
+
+.table-container {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.search-box {
+    flex-grow: 1;
+    display: flex;
+    gap: 0.5rem;
+    max-width: 400px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.01);
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+
+    /* Mágica de responsividade: Escondemos o cabeçalho da tabela e transformamos cada linha (tr) em um Card independente para caber telas pequenas. */
+    thead {
+        display: none;
+    }
+
+    tr,
+    td {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        padding: 1rem;
+    }
+
+    td {
+        padding: 0.5rem 0;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    td::before {
+        content: attr(data-label);
+        color: var(--text-muted);
+    }
+}

@@ -1,0 +1,110 @@
+/* Define a estrutura principal das páginas (container) e a barra de navegação flutuante lá embaixo. */
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.page-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.nav-dock {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    /* Truque clássico de CSS para centralizar algo absoluto/fixo perfeitamente: move 50% e volta metade da própria largura */
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(15, 15, 18, 0.85);
+    /* Blur pesado para criar o efeito de "vidro fosco" atrás da barra de navegação */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 0.75rem 2rem;
+    display: flex;
+    gap: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    width: auto;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.nav-item i,
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 2px;
+    transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item:hover svg {
+    transform: translateY(-2px);
+}
+
+.nav-item.active {
+    color: var(--accent-primary);
+}
+
+.nav-item.active svg {
+    stroke: var(--accent-primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-dock {
+        width: 90%;
+        bottom: 16px;
+        padding: 0.75rem 1.5rem;
+        gap: 1rem;
+        justify-content: space-around;
+    }
+
+    .nav-item {
+        font-size: 0.7rem;
+    }
+
+    .container {
+        padding-bottom: 120px;
+    }
+}

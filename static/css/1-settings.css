@@ -1,0 +1,28 @@
+/* Este arquivo guarda todas as variáveis globais, como cores, tamanhos e configurações do tema escuro. */
+
+:root {
+    --bg-obsidian: #0a0a0c;
+    /* Gradiente radial sutil para evitar que o fundo preto fique "chapado" e sem vida */
+    --bg-gradient: radial-gradient(circle at top right, #1a1a2e, #0a0a0c);
+
+    --glass-bg: rgba(20, 20, 23, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.1);
+
+    --accent-primary: #7c3aed;
+    --accent-secondary: #06b6d4;
+
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+
+    --status-available: #10b981;
+    --status-in-use: #f59e0b;
+    --status-maintenance: #ef4444;
+
+    --container-width: 1000px;
+    --nav-height: 80px;
+
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+}

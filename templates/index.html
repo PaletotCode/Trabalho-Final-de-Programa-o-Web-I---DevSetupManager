@@ -1,0 +1,42 @@
+<!-- Página principal que mostra o resumo do sistema (Dashboard) através de cartões de estatísticas e atalhos rápidos. -->
+{% extends "base.html" %}
+
+{% block title %}Dashboard - DevSetup Manager{% endblock %}
+
+{% block content %}
+<section>
+    <div>
+        <h1>Dashboard</h1>
+        <p class="subtitle">Visão geral do ecossistema.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="card stat-card">
+            <span class="stat-label">Total de Items</span>
+            <span class="stat-value">{{ total if total is defined else '0' }}</span>
+        </div>
+        <div class="card stat-card">
+            <span class="stat-label">Valor Investido</span>
+            <span class="stat-value">R$ {{ "%.2f"|format(valor) if valor is defined else '0.00' }}</span>
+        </div>
+        <div class="card stat-card">
+            <span class="stat-label">Em Manutenção</span>
+            <span class="stat-value">{{ manutencao if manutencao is defined else '0' }}</span>
+        </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+        <h2>Ações Rápidas</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="{{ url_for('cadastro') }}" class="btn btn-primary">
+                <i data-lucide="plus" style="width: 18px; height: 18px;"></i>
+                Adicionar Equipamento
+            </a>
+            <a href="{{ url_for('listar') }}" class="btn btn-secondary">
+                <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+                Buscar no Inventário
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
