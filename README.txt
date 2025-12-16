@@ -7,14 +7,14 @@ O projeto foi construído pensando não só em funcionar, mas em ser agradável 
 
 Cumprindo os Requisitos
 Professor, segui à risca o que foi pedido, mas dei um toque especial na qualidade do código:
-- Backend Simples e Funcional: Usei Python com Flask e SQLite, resolvendo o problema sem burocracia.
+- Backend Simples e Funcional: Usei Python com Flask e SQLite.
 - HTML Semântico: As tags certas nos lugares certos (header, main, nav, section), garantindo acessibilidade e estrutura.
-- CSS "Na Unha" (Vanilla): Nada de frameworks pesados como Bootstrap. Todo o estilo foi feito com CSS puro, organizado em módulos para facilitar a vida de quem lê o código.
+- CSS "Na Unha" (Vanilla): Não usei frameworks pesados como Bootstrap. Todo o estilo foi feito com CSS puro, organizado em módulos para facilitar a vida de quem lê o código.
 - Design Moderno: Implementei um tema escuro (Dark Mode) com Glassmorphism (efeito de vidro), que é tendência de mercado.
 
 Como foi feito
 A estrutura foi pensada para simular um ambiente profissional:
-1. Modularização: O CSS não é um "linguição". Ele foi dividido em configurações, layout, componentes e módulos.
+1. Modularização: O CSS não é um "linguição" kkk. Ele foi dividido em configurações, layout, componentes e módulos.
 2. Templates Jinja2: Usei herança de templates (base.html) para não repetir código. Se mudar o menu em um lugar, muda em tudo.
 3. Python Limpo: O app.py está direto ao ponto, com funções claras e documentado em português simples.
 

@@ -73,7 +73,7 @@ tr:last-child td {
 
 @media (max-width: 768px) {
 
-    /* Mágica de responsividade: Escondemos o cabeçalho da tabela e transformamos cada linha (tr) em um Card independente para caber telas pequenas. */
+    /* Já apanhei com isso fazendo o calculaconfia funcionar em celulares: Escondemos o cabeçalho da tabela e transformamos cada linha (tr) em um Card independente para caber telas pequenas. */
     thead {
         display: none;
     }
