@@ -17,6 +17,8 @@ A estrutura foi pensada para simular um ambiente profissional:
 1.  **Modularização**: O CSS não é um "linguição" kkk. Ele foi dividido em configurações, layout, componentes e módulos.
 2.  **Templates Jinja2**: Usei herança de templates (`base.html`) para não repetir código. Se mudar o menu em um lugar, muda em tudo.
 3.  **Python Limpo**: O `app.py` está direto ao ponto, com funções claras e documentado em português simples.
+4. **LucidIcons**: Utilizei apenas um script externo, os LucidIcons, que servem apenas para dar uma estética mais agradável de ícones mais refinados no projeto.
+
 
 ## 🌟 Agradecimento Especial
 
